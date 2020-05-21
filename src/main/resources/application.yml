@@ -1,0 +1,25 @@
+
+server:
+  port: 9100
+
+spring:
+  application:
+    name: backend-citas-seguridad
+  sleuth:
+    sampler:
+      probability: 1.0
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8781/eureka
+
+logging:
+  file: logs/backend-citas-seguridad.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    com.howtodoinjava: DEBUG
+    org.hibernate: ERROR
